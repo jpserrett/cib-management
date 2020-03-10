@@ -11,8 +11,7 @@ router.get('/:userId', function(req, res, next) {
   res.send({
     name: 'John Doe',
     email: 'foo@foo.com',
-    role: 'user',
-    id: req.params
+    role: 'user'
   });
 });
 
