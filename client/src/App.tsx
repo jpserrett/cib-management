@@ -25,7 +25,7 @@ function App() {
          */
         const getUser = async () => {
             try {
-                const response = await axios.get('/users/1');
+                const response = await axios.get('/users/2');
                 setUser(response.data);
             } catch (error) {
                 console.error(error);
