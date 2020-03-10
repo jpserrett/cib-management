@@ -9,7 +9,6 @@ const User = (user:UserInfo) => (
             <div className="user__details__item user__details__item--inactive">{user.email}</div>
             <div className="user__details__item">{user.role}</div>
         </div>
-
     </div>
 );
 

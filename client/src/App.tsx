@@ -8,16 +8,16 @@ function App() {
     /**
      * Set up state for user info
      */
-    const [ user, setUser ] = useState<UserInfo>(
+    const [user, setUser] = useState<UserInfo>(
         {
             name: '',
             email: '',
-            role: ''
-        }
+            role: '',
+        },
     );
 
     /**
-     * React hook to perform methods on update. 
+     * React hook to perform methods on update.
      */
     useEffect(() => {
         /**
@@ -31,7 +31,6 @@ function App() {
                 console.error(error);
             }
         };
-    
         getUser();
     }, []);
 
