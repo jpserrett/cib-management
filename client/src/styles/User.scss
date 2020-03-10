@@ -1,0 +1,17 @@
+.user {
+    &__header {
+        font-weight: bold;
+    }
+
+    &__details {
+        padding: 4px;
+
+        &__item {
+
+            &--inactive {
+                color: rgb(109, 106, 106);
+                font-style: italic;
+            }
+        }
+    }
+}
