@@ -3,6 +3,7 @@ import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import { TextInput } from './commonFormComponents';
 
+// TODO: do not use this form as is, this is purely for example purposes
 const TestForm = () => (
     <>
         <h3>Form Test</h3>
