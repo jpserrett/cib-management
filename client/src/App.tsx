@@ -3,6 +3,7 @@ import axios from 'axios';
 import User from './components/User';
 import { UserInfo } from './interfaces';
 import './App.scss';
+import TestForm from './components/Form';
 
 function App() {
     /**
@@ -41,6 +42,7 @@ function App() {
             </header>
             <div className="main">
                 <User {...user} />
+                <TestForm />
             </div>
         </div>
     );
