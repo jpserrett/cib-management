@@ -71,9 +71,12 @@ function App() {
 </Navbar>
 
         <div className="main">
-          <Image src="https://via.placeholder.com/2560X250" fluid />            
+          <Image src="/sunrise.jpg" fluid />            
             <Jumbotron>
               <User {...user} />
+              <br></br>
+              <hr></hr>
+              <br></br>
               <TestForm />
             </Jumbotron>
         </div>

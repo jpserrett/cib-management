@@ -6,7 +6,8 @@ import { TextInput } from './commonFormComponents';
 // TODO: do not use this form as is, this is purely for example purposes
 const TestForm = () => (
     <>
-        <h3>Form Test</h3>
+        <h3>CIB Search Menu</h3>
+        <br></br>
         <Formik
           initialValues={{
               producer: '',
@@ -15,12 +16,12 @@ const TestForm = () => (
           }}
           validationSchema={Yup.object({
               producer: Yup.string()
-                  .max(15, 'Must be 15 characters or less')
+                  .max(25, 'Must be 25 characters or less')
                   .required('Required'),
               currencyYear: Yup.date()
                   .required('Required'),
               name: Yup.string()
-                  .max(5, 'Must be 5 characters or less')
+                  .max(25, 'Must be 25 characters or less')
                   .required('Required'),
           })}
           onSubmit={(values, { setSubmitting }) => {
@@ -37,12 +38,14 @@ const TestForm = () => (
                   name="producer"
                   type="text"
                 />
+
                 <TextInput
                   id="currencyYear"
                   label="Currency Year"
                   name="currencyYear"
                   type="date"
                 />
+
                 <TextInput
                   id="name"
                   label="Name"
