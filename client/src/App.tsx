@@ -11,8 +11,6 @@ import FormControl from 'react-bootstrap/FormControl';
 import Form from 'react-bootstrap/FormCheck';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Image from 'react-bootstrap/Image';
-import Tooltip from 'react-bootstrap/Tooltip';
-import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import './App.scss';
 import TestForm from './components/Form';
 

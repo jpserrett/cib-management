@@ -6,9 +6,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
-
-
 
 // TODO: do not use this form as is, this is purely for example purposes
 const TestForm = () => (
