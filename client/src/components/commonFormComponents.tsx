@@ -2,6 +2,7 @@ import React from 'react';
 import { useField } from 'formik';
 
 interface InputProps {
+    placeholder: string,
     label: string,
     id: string,
     name: string,
@@ -12,7 +13,7 @@ interface InputWithChildrenProps extends InputProps {
     children: React.ReactNode
 }
 
-export const TextInput = ({ label, ...props }: InputProps) => {
+export const Field = ({ label, ...props }: InputProps) => {
     // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]
     // which we can spread on <input> and also replace ErrorMessage entirely.
     const [field, meta] = useField(props);

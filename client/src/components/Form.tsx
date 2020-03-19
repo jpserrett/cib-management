@@ -1,7 +1,7 @@
 import React from 'react';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
-import { TextInput } from './commonFormComponents';
+import { Field } from './commonFormComponents';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -38,11 +38,12 @@ const TestForm = () => (
         <Container fluid>
             <Form>
                 <Row className="justify-content-md-center">
-                    <Col md={{ span: 3}}>
+                    <Col md={{ span: 6}}>
 
-                        <TextInput
+                        <Field
+                            label="Who produced it?"
+                            placeholder="Enter producer here"
                             id="producer"
-                            label="Producer"
                             name="producer"
                             type="text"
                         />
@@ -50,11 +51,12 @@ const TestForm = () => (
                 </Row>
 
                 <Row className="justify-content-md-center">
-                    <Col md={{ span: 3 }}>
+                    <Col md={{ span: 6 }}>
 
-                        <TextInput
+                        <Field
+                            label="When was it produced?"
+                            placeholder="Currency Year"
                             id="currencyYear"
-                            label="Currency Year"
                             name="currencyYear"
                             type="date"
                         />
@@ -62,11 +64,12 @@ const TestForm = () => (
                 </Row>
 
                 <Row className="justify-content-md-center">
-                    <Col md={{ span: 3 }}>
+                    <Col md={{ span: 6 }}>
 
-                        <TextInput
+                        <Field
+                            label="Who is requesting it?"
+                            placeholder="Enter name here"
                             id="name"
-                            label="Name"
                             name="name"
                             type="text"
                         />
