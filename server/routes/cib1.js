@@ -21,7 +21,11 @@ const cib1Data = {
     cellCurrencyYear: 2005,
     prodDate: '',
     gatewayLoadDate: '',
-    shippedToGatewayDate: ''
+    shippedToGatewayDate: '',
+    nwCoord: 90,
+    neCoord: 90,
+    swCoord: 90,
+    seCoord: 90
   }, 
   2: {
     edition: 2,
@@ -32,7 +36,11 @@ const cib1Data = {
     cellCurrencyYear: 2018,
     prodDate: '',
     gatewayLoadDate: '',
-    shippedToGatewayDate: ''
+    shippedToGatewayDate: '',
+    nwCoord: 90,
+    neCoord: 90,
+    swCoord: 90,
+    seCoord: 90
   },
   3: {
     edition: 1,
@@ -43,7 +51,11 @@ const cib1Data = {
     cellCurrencyYear: 2009,
     prodDate: '',
     gatewayLoadDate: '',
-    shippedToGatewayDate: ''
+    shippedToGatewayDate: '',
+    nwCoord: 90,
+    neCoord: 90,
+    swCoord: 90,
+    seCoord: 90
   },
   4: {
     edition: 1,
@@ -54,7 +66,11 @@ const cib1Data = {
     cellCurrencyYear: 2010,
     prodDate: '',
     gatewayLoadDate: '',
-    shippedToGatewayDate: ''
+    shippedToGatewayDate: '',
+    nwCoord: 90,
+    neCoord: 90,
+    swCoord: 90,
+    seCoord: 90
   },
   5: {
     edition: 3,
@@ -65,7 +81,11 @@ const cib1Data = {
     cellCurrencyYear: 2019,
     prodDate: '',
     gatewayLoadDate: '',
-    shippedToGatewayDate: ''
+    shippedToGatewayDate: '',
+    nwCoord: 90,
+    neCoord: 90,
+    swCoord: 90,
+    seCoord: 90
   }
 }
 module.exports = router;

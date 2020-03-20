@@ -9,7 +9,7 @@ var usersRouter = require('./routes/users');
 var candidateProgramsRouter = require('./routes/candidate-programs');
 var cib1Router = require('./routes/cib1');
 var cib5Router = require('./routes/cib5');
-var cib5BundlesRouter = require('./routes/cib5-bundles');
+var cib5BundlesRouter = require('./routes/cib5-bundle');
 
 var app = express();
 
@@ -28,7 +28,7 @@ app.use('/users', usersRouter);
 app.use('/candidate-programs', candidateProgramsRouter);
 app.use('/cib1', cib1Router);
 app.use('/cib5', cib5Router);
-app.use('/cib5', cib5BundlesRouter);
+app.use('/cib5-bundles', cib5BundlesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
