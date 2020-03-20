@@ -18,7 +18,7 @@ const Cib1 = () => {
 
         const getCib1 = async () => {
             try {
-                const response = await axios.get('/cib1/1');
+                const response = await axios.get('/cib1/ABC123');
                 setCib1(response.data);
             } catch (error) {
                 console.error(error);
@@ -35,8 +35,8 @@ const Cib1 = () => {
             <ul>
                 {cib1s && cib1s.length > 1 ? cib1s.map((cib) => (
                     <li key={cib.nsn}>
-                        <span>{cib.nsn}</span>
-                        <span>{cib.edition}</span>
+                        <span>{`NSN: ${cib.nsn}`}</span>
+                        <span>{`Edition: ${cib.edition}`}</span>
                     </li>
                 )) : null}
             </ul>

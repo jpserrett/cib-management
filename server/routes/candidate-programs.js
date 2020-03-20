@@ -1,18 +1,22 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
+/* GET candidate program listing. */
 router.get('/', function(req, res, next) {
   res.send(candidatePrograms);
 });
 
-/* GET user by userid. */
-router.get('/:userId', function(req, res, next) {
-  res.send(candidatePrograms[req.params.userId]);
+/* GET candidate program by candidateProgramId. */
+router.get('/:candidateProgramId', function(req, res, next) {
+  let candidateProgram;
+  candidateProgramData.forEach(item => {
+    if(item.nsn === req.params.candidateProgramId){ candidateProgram = item; }
+  })
+  res.send(candidateProgram);
 });
 
-const candidatePrograms = {
-  1: {
+const candidateProgramData = [
+  {
     cib5s: [],
     cib1s: [],
     cib5Bundles: [],
@@ -25,7 +29,7 @@ const candidatePrograms = {
     budgetCompleted: '',
     orderNumber: 'DOA456'
   }, 
-  2: {
+  {
     cib5s: [],
     cib1s: [],
     cib5Bundles: [],
@@ -38,7 +42,7 @@ const candidatePrograms = {
     budgetCompleted: '',
     orderNumber: 'DOB123'
   },
-  3: {
+  {
     cib5s: [],
     cib1s: [],
     cib5Bundles: [],
@@ -51,7 +55,7 @@ const candidatePrograms = {
     budgetCompleted: '',
     orderNumber: 'DOC789'
   },
-  4: {
+  {
     cib5s: [],
     cib1s: [],
     cib5Bundles: [],
@@ -64,7 +68,7 @@ const candidatePrograms = {
     budgetCompleted: '',
     orderNumber: 'DOF876'
   },
-  5: {
+  {
     cib5s: [],
     cib1s: [],
     cib5Bundles: [],
@@ -77,5 +81,5 @@ const candidatePrograms = {
     budgetCompleted: '',
     orderNumber: 'DOG999'
   }
-}
+]
 module.exports = router;

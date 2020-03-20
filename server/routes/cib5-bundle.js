@@ -1,18 +1,22 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
+/* GET cib5 bundles listing. */
 router.get('/', function(req, res, next) {
   res.send(cib5BundleData);
 });
 
-/* GET user by userid. */
-router.get('/:userId', function(req, res, next) {
-  res.send(cib5BundleData[req.params.userId]);
+/* GET cib5 bundle by cib5BundleId. */
+router.get('/:cib5BundleId', function(req, res, next) {
+  let cib5Bundle;
+  cib5BundleData.forEach(item => {
+    if(item.nsn === req.params.cib5BundleId){ cib5Bundle = item; }
+  })
+  res.send(cib5Bundle);
 });
 
-const cib5BundleData = {
-    1: {
+const cib5BundleData = [
+    {
         edition: 1,
         nsn: 'ABC123',
         prodStatus: 'IN WORK',
@@ -24,7 +28,7 @@ const cib5BundleData = {
         shippedToGatewayDate: '',
         cib5s: []
       }, 
-      2: {
+      {
         edition: 2,
         nsn: 'DEF456',
         prodStatus: 'IN WORK',
@@ -36,7 +40,7 @@ const cib5BundleData = {
         shippedToGatewayDate: '',
         cib5s: []
       },
-      3: {
+      {
         edition: 1,
         nsn: 'XYZ789',
         prodStatus: 'COMPLETED',
@@ -48,7 +52,7 @@ const cib5BundleData = {
         shippedToGatewayDate: '',
         cib5s: []
       },
-      4: {
+      {
         edition: 1,
         nsn: 'GHI567',
         prodStatus: 'PROCESSED',
@@ -60,7 +64,7 @@ const cib5BundleData = {
         shippedToGatewayDate: '',
         cib5s: []
       },
-      5: {
+      {
         edition: 3,
         nsn: 'ABC678',
         prodStatus: 'COMPLETED',
@@ -72,5 +76,5 @@ const cib5BundleData = {
         shippedToGatewayDate: '',
         cib5s: []
       }
-}
+    ]
 module.exports = router;

@@ -1,18 +1,22 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
+/* GET cib5 listing. */
 router.get('/', function(req, res, next) {
   res.send(cib5Data);
 });
 
-/* GET user by userid. */
-router.get('/:userId', function(req, res, next) {
-  res.send(cib5Data[req.params.userId]);
+/* GET cib5 by cib5Id. */
+router.get('/:cib5Id', function(req, res, next) {
+  let cib5;
+  cib5Data.forEach(item => {
+    if(item.nsn === req.params.cib5Id){ cib5 = item; }
+  })
+  res.send(cib5);
 });
 
-const cib5Data = {
-    1: {
+const cib5Data = [
+    {
         edition: 1,
         nsn: 'ABC123',
         prodStatus: 'IN WORK',
@@ -24,7 +28,7 @@ const cib5Data = {
         shippedToGatewayDate: '',
         cib1s: []
       }, 
-      2: {
+      {
         edition: 2,
         nsn: 'DEF456',
         prodStatus: 'IN WORK',
@@ -36,7 +40,7 @@ const cib5Data = {
         shippedToGatewayDate: '',
         cib1s: []
       },
-      3: {
+      {
         edition: 1,
         nsn: 'XYZ789',
         prodStatus: 'COMPLETED',
@@ -48,7 +52,7 @@ const cib5Data = {
         shippedToGatewayDate: '',
         cib1s: []
       },
-      4: {
+      {
         edition: 1,
         nsn: 'GHI567',
         prodStatus: 'PROCESSED',
@@ -60,7 +64,7 @@ const cib5Data = {
         shippedToGatewayDate: '',
         cib1s: []
       },
-      5: {
+      {
         edition: 3,
         nsn: 'ABC678',
         prodStatus: 'COMPLETED',
@@ -72,5 +76,5 @@ const cib5Data = {
         shippedToGatewayDate: '',
         cib1s: []
       }
-}
+    ]
 module.exports = router;
