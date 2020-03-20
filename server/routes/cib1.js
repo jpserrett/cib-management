@@ -7,12 +7,16 @@ router.get('/', function(req, res, next) {
 });
 
 /* GET user by userid. */
-router.get('/:userId', function(req, res, next) {
-  res.send(cib1Data[req.params.userId]);
+router.get('/:cib1Id', function(req, res, next) {
+  let cib1;
+  cib1Data.forEach(item => {
+    if(item.nsn === req.params.cib1Id){ cib1 = item; }
+  })
+  res.send(cib1);
 });
 
-const cib1Data = {
-  1: {
+const cib1Data = [
+  {
     edition: 1,
     nsn: 'ABC123',
     prodStatus: 'IN WORK',
@@ -27,7 +31,7 @@ const cib1Data = {
     swCoord: 90,
     seCoord: 90
   }, 
-  2: {
+  {
     edition: 2,
     nsn: 'DEF456',
     prodStatus: 'IN WORK',
@@ -42,7 +46,7 @@ const cib1Data = {
     swCoord: 90,
     seCoord: 90
   },
-  3: {
+  {
     edition: 1,
     nsn: 'XYZ789',
     prodStatus: 'COMPLETED',
@@ -57,7 +61,7 @@ const cib1Data = {
     swCoord: 90,
     seCoord: 90
   },
-  4: {
+  {
     edition: 1,
     nsn: 'GHI567',
     prodStatus: 'PROCESSED',
@@ -72,7 +76,7 @@ const cib1Data = {
     swCoord: 90,
     seCoord: 90
   },
-  5: {
+  {
     edition: 3,
     nsn: 'ABC678',
     prodStatus: 'COMPLETED',
@@ -87,5 +91,5 @@ const cib1Data = {
     swCoord: 90,
     seCoord: 90
   }
-}
+]
 module.exports = router;

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Cib1Type } from '../interfaces';
 
 const Cib1 = () => {
-    const [cib1s, setCib1s] = useState();
-    const [cib1, setCib1] = useState();
+    const [cib1s, setCib1s] = useState<Cib1Type[]>([]);
+    const [cib1, setCib1] = useState<Cib1Type>();
 
     useEffect(() => {
         const getCib1s = async () => {
@@ -29,7 +30,17 @@ const Cib1 = () => {
     }, []);
 
     return (
-        <div>CIB1s</div>
+        <>
+            <h1>CIB1s</h1>
+            <ul>
+                {cib1s && cib1s.length > 1 ? cib1s.map((cib) => (
+                    <li key={cib.nsn}>
+                        <span>{cib.nsn}</span>
+                        <span>{cib.edition}</span>
+                    </li>
+                )) : null}
+            </ul>
+        </>
     );
 };
 

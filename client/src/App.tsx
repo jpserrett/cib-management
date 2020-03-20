@@ -54,9 +54,9 @@ function App() {
                             <li><Link to="/candidate-programs">Candidate Programs</Link></li>
                         </ul>
                     </nav>
+                    <User {...user} />
                 </header>
                 <div className="main">
-                    <User {...user} />
                     <Route path="/cib1" component={Cib1} />
                     <Route path="/cib5" component={Cib5} />
                     <Route path="/cib5-bundles" component={Cib5Bundles} />
