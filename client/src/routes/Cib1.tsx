@@ -44,7 +44,6 @@ const Cib1 = () => {
               enableReinitialize
               validationSchema={Yup.object({
                   producer: Yup.string()
-                      .max(15, 'Must be 15 characters or less')
                       .required('Required'),
                   edition: Yup.number()
                       .max(1, 'May only be a single digit')
@@ -62,7 +61,7 @@ const Cib1 = () => {
                       id="edition"
                       label="Edition"
                       name="edition"
-                      type="text"
+                      type="number"
                     />
                     <TextInput
                       id="nsn"
