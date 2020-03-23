@@ -9,7 +9,7 @@ import Cib5List from './routes/Cib5List';
 import Cib5BundleList from './routes/Cib5BundleList';
 import CandidateProgramList from './routes/CandidateProgramList';
 import { UserInfo } from './interfaces';
-import './App.scss';
+import './styles/App.scss';
 
 function App() {
     /**
