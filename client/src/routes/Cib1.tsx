@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useParams } from 'react-router-dom';
 import { Cib1Type } from '../interfaces';
 
 const Cib1 = () => {
@@ -16,10 +17,12 @@ const Cib1 = () => {
         seCoord: 90,
     });
 
+    const { cib1Id } = useParams();
+
     useEffect(() => {
         const getCib1 = async () => {
             try {
-                const response = await axios.get('/cib1/ABC123');
+                const response = await axios.get(`/cib1/${cib1Id}`);
                 setCib1(response.data);
             } catch (error) {
                 console.error(error);
@@ -27,12 +30,12 @@ const Cib1 = () => {
         };
 
         getCib1();
-    }, []);
+    }, [cib1Id]);
 
     return (
         <>
-            <h1>{cib1.nsn}</h1>
-
+            <div>CIB1s</div>
+            <span>{`NSN: ${cib1.nsn}`}</span>
         </>
     );
 };
