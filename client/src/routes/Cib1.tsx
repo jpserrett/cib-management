@@ -3,19 +3,20 @@ import axios from 'axios';
 import { Cib1Type } from '../interfaces';
 
 const Cib1 = () => {
-    const [cib1s, setCib1s] = useState<Cib1Type[]>([]);
-    const [cib1, setCib1] = useState<Cib1Type>();
+    const [cib1, setCib1] = useState<Cib1Type>({
+        edition: 1,
+        nsn: '',
+        prodStatus: '',
+        producer: '',
+        classification: '',
+        cellCurrencyYear: 0,
+        nwCoord: 90,
+        neCoord: 90,
+        swCoord: 90,
+        seCoord: 90,
+    });
 
     useEffect(() => {
-        const getCib1s = async () => {
-            try {
-                const response = await axios.get('/cib1');
-                setCib1s(response.data);
-            } catch (error) {
-                console.error(error);
-            }
-        };
-
         const getCib1 = async () => {
             try {
                 const response = await axios.get('/cib1/ABC123');
@@ -25,21 +26,13 @@ const Cib1 = () => {
             }
         };
 
-        getCib1s();
         getCib1();
     }, []);
 
     return (
         <>
-            <h1>CIB1s</h1>
-            <ul>
-                {cib1s && cib1s.length > 1 ? cib1s.map((cib) => (
-                    <li key={cib.nsn}>
-                        <span>{`NSN: ${cib.nsn}`}</span>
-                        <span>{`Edition: ${cib.edition}`}</span>
-                    </li>
-                )) : null}
-            </ul>
+            <h1>{cib1.nsn}</h1>
+
         </>
     );
 };

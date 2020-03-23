@@ -3,14 +3,14 @@ var router = express.Router();
 
 /* GET candidate program listing. */
 router.get('/', function(req, res, next) {
-  res.send(candidatePrograms);
+  res.send(candidateProgramData);
 });
 
 /* GET candidate program by candidateProgramId. */
 router.get('/:candidateProgramId', function(req, res, next) {
   let candidateProgram;
   candidateProgramData.forEach(item => {
-    if(item.nsn === req.params.candidateProgramId){ candidateProgram = item; }
+    if(item.orderNumber === req.params.candidateProgramId){ candidateProgram = item; }
   })
   res.send(candidateProgram);
 });

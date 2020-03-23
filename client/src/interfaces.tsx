@@ -21,3 +21,43 @@ export type Cib1Type = {
     swCoord: number,
     seCoord: number
 }
+
+export type Cib5Type = {
+    edition: number,
+    nsn: string,
+    prodStatus: string,
+    producer: string,
+    classification: string,
+    cellCurrencyYear: number,
+    prodDate?: number,
+    gatewayLoadDate?: number,
+    shippedToGatewayDate?: number,
+    cib1s: []
+}
+
+export type CandidateProgramType = {
+    cib5s: [],
+    cib1s: Cib1Type[],
+    cib5Bundles: [],
+    volumesAllocated: number,
+    volumesProduces: number,
+    quartersAllocated: number,
+    quartersProduced: number,
+    budgetUsed: string,
+    budgetOrdered: string,
+    budgetCompleted: string,
+    orderNumber: string
+  }
+
+export type Cib5BundleType = {
+    edition: number,
+    nsn: string,
+    prodStatus: string,
+    producer: string,
+    classification: string,
+    cellCurrencyYear: number,
+    prodDate?: string,
+    gatewayLoadDate?: string,
+    shippedToGatewayDate?: string,
+    cib5s: []
+  }

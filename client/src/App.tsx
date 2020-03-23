@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import {
+    BrowserRouter as Router, Route, Link, Switch,
+} from 'react-router-dom';
 import axios from 'axios';
 import User from './components/User';
-import Cib1 from './routes/Cib1';
-import Cib5 from './routes/Cib5';
-import Cib5Bundles from './routes/Cib5Bundles';
-import CandidatePrograms from './routes/CandidatePrograms';
+import Cib1List from './routes/Cib1List';
+import Cib5List from './routes/Cib5List';
+import Cib5BundleList from './routes/Cib5BundleList';
+import CandidateProgramList from './routes/CandidateProgramList';
 import { UserInfo } from './interfaces';
 import './App.scss';
 
@@ -57,10 +59,13 @@ function App() {
                     <User {...user} />
                 </header>
                 <div className="main">
-                    <Route path="/cib1" component={Cib1} />
-                    <Route path="/cib5" component={Cib5} />
-                    <Route path="/cib5-bundles" component={Cib5Bundles} />
-                    <Route path="/candidate-programs" component={CandidatePrograms} />
+                    <Switch>
+                        <Route path="/cib1" component={Cib1List} />
+                        <Route path="/cib5" component={Cib5List} />
+                        <Route path="/cib5-bundles" component={Cib5BundleList} />
+                        <Route path="/candidate-programs" component={CandidateProgramList} />
+                    </Switch>
+
                 </div>
             </div>
         </Router>
