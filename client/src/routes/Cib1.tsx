@@ -37,7 +37,7 @@ const Cib1 = () => {
 
     return (
         <>
-            <div>CIB1s</div>
+            <div>CIB1</div>
             <span>{`NSN: ${cib1.nsn}`}</span>
             <Formik
               initialValues={cib1}
